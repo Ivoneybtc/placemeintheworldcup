@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Place Me in the World Cup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="pitch-bg" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="badge">⚽</div>
+    <h1>Place Me in the World Cup</h1>
+    <p class="subtitle">Pick a scene, your country &amp; number — get a ready-to-paste AI prompt.</p>
+  </header>
+
+  <main class="container">
+    <!-- Tabs -->
+    <nav class="tabs" role="tablist" aria-label="Prompt type">
+      <button class="tab is-active" id="tab-image" role="tab" aria-selected="true" data-tab="image">
+        📸 Image Prompt
+      </button>
+      <button class="tab" id="tab-video" role="tab" aria-selected="false" data-tab="video">
+        🎬 Video Prompt
+      </button>
+    </nav>
+
+    <!-- Step 1: choose a scene -->
+    <section class="panel">
+      <h2 class="step-title"><span class="step-num">1</span> Choose your scene</h2>
+      <div class="scene-grid" id="scene-grid"><!-- cards injected by app.js --></div>
+    </section>
+
+    <!-- Step 2: customize -->
+    <section class="panel">
+      <h2 class="step-title"><span class="step-num">2</span> Customize your kit</h2>
+      <div class="controls">
+        <div class="field">
+          <span class="field-label" id="country-label">Country jersey</span>
+          <div class="combo" id="country-combo">
+            <input id="country-search" class="input" type="text"
+                   placeholder="Search or select a country…" autocomplete="off"
+                   role="combobox" aria-expanded="false" aria-autocomplete="list"
+                   aria-controls="country-list" aria-labelledby="country-label" />
+            <ul id="country-list" class="combo-list is-hidden" role="listbox"></ul>
+          </div>
+        </div>
+
+        <label class="field">
+          <span class="field-label">Shirt number</span>
+          <input id="number-input" class="input" type="text" inputmode="numeric"
+                 placeholder="10" maxlength="2" autocomplete="off" />
+        </label>
+
+        <div class="field field-name">
+          <label class="checkbox-row">
+            <input id="name-toggle" type="checkbox" />
+            <span>Put my name on the jersey</span>
+          </label>
+          <input id="name-input" class="input is-hidden" type="text"
+                 placeholder="Name on jersey (e.g. CROWN)" maxlength="16" autocomplete="off" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 3: generate -->
+    <section class="panel">
+      <h2 class="step-title"><span class="step-num">3</span> Generate your prompt</h2>
+      <label class="field commentary-field is-hidden" id="commentary-wrap">
+        <span class="field-label">Your name on commentary</span>
+        <input id="commentary-input" class="input commentary-input" type="text"
+               placeholder="Crown" maxlength="24" autocomplete="off" />
+      </label>
+      <button id="generate-btn" class="generate-btn" disabled>Generate prompt ⚽</button>
+      <p class="hint" id="hint">Pick a scene, a country and a number to continue.</p>
+
+      <div class="output-wrap is-hidden" id="output-wrap">
+        <textarea id="output" class="output" readonly rows="10"></textarea>
+        <div class="output-actions">
+          <button id="copy-btn" class="copy-btn">📋 Copy prompt</button>
+          <button id="copy-simple-btn" class="copy-btn copy-btn--secondary is-hidden">📋 Copy simple video prompt</button>
+          <span class="copy-note">Paste it into ChatGPT (or your video tool) <strong>with your own photo attached</strong>.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      Made for fun · Bring your own selfie · Not affiliated with FIFA ·
+      <a href="https://github.com/crownemmanuel/placemeintheworldcup">GitHub</a>
+    </p>
+  </footer>
+
+  <script src="data/teams.js"></script>
+  <script src="data/scenarios.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

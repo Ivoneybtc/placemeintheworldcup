@@ -1,0 +1,18 @@
+.DS_Store
+Thumbs.db
+
+# Local editor / assistant state
+.claude/
+.vscode/
+.idea/
+
+# Dependency/build output if tooling is added later
+node_modules/
+dist/
+build/
+.cache/
+
+# Local research/source-generation assets that are not required by the static site
+world-cup-2026-team-assets/
+world-cup-2026-generated-thumbnails/
+

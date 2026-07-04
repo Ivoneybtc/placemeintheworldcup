@@ -52,9 +52,47 @@ button, a, select, .scene-card { cursor: url("assets/cursor/ball.svg") 16 16, po
 
 /* ---------- Header ---------- */
 .site-header {
+  position: relative;
   text-align: center;
   padding: 34px 20px 14px;
   color: #fff;
+}
+.github-link {
+  position: fixed;
+  top: 18px;
+  right: 20px;
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 2px solid rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  background: #fff;
+  color: #17221b;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  transition: transform 0.12s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.github-link:hover,
+.github-link:focus-visible {
+  transform: translateY(-2px);
+  background: var(--accent);
+  color: var(--accent-ink);
+  outline: none;
+}
+.github-link:focus-visible {
+  box-shadow: var(--shadow), 0 0 0 4px rgba(255, 210, 63, 0.38);
+}
+.github-link__icon {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  fill: currentColor;
 }
 .badge {
   font-size: 44px;
@@ -373,19 +411,18 @@ button, a, select, .scene-card { cursor: url("assets/cursor/ball.svg") 16 16, po
   padding: 10px 20px 34px;
   font-size: 14px;
 }
-.site-footer a {
-  color: #fff;
-  font-weight: 700;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
-}
 
 /* ---------- Responsive ---------- */
+@media (max-width: 840px) {
+  .site-header { padding-top: 78px; }
+  .github-link { right: 16px; }
+}
 @media (max-width: 720px) {
   .scene-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 480px) {
   body { font-size: 17px; }
   .controls { grid-template-columns: 1fr; }
+  .scene-grid { grid-template-columns: 1fr; }
   .scene-meta p { display: none; }
 }

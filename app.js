@@ -32,6 +32,7 @@
   var output = document.getElementById("output");
   var copyBtn = document.getElementById("copy-btn");
   var copySimpleBtn = document.getElementById("copy-simple-btn");
+  var copyNote = document.getElementById("copy-note");
   var tabButtons = document.querySelectorAll(".tab");
 
   // ---------- Init ----------
@@ -152,6 +153,14 @@
     grid.innerHTML = "";
 
     scenes.forEach(function (scene) {
+      if (scene.type === "section") {
+        var label = document.createElement("div");
+        label.className = "scene-section-label";
+        label.innerHTML = '<strong>' + scene.title + '</strong><span>' + scene.note + "</span>";
+        grid.appendChild(label);
+        return;
+      }
+
       var card = document.createElement("button");
       card.className = "scene-card";
       card.type = "button";
@@ -355,7 +364,19 @@
     resetCopyBtn();
     resetCopySimpleBtn();
     updateSimpleCopyButton(scene);
+    updateCopyNote(scene);
     outputWrap.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  function updateCopyNote(scene) {
+    if (!copyNote) return;
+    if (scene.requiresMultipleFaces) {
+      copyNote.innerHTML = 'Paste it into your image tool <strong>with every face photo attached</strong> (people or pets).';
+    } else if (scene.requiresPlayerPhoto) {
+      copyNote.innerHTML = 'Might not work on GPT Image — try <strong>Grok or Nano Banana</strong> with your photo and the player photo attached.';
+    } else {
+      copyNote.innerHTML = 'Paste it into ChatGPT (or your video tool) <strong>with your own photo attached</strong>.';
+    }
   }
 
   function updateSimpleCopyButton(scene) {

@@ -21,6 +21,12 @@ args = parse_args()
 
 Handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=DIRECTORY)
 
-with socketserver.TCPServer((args.host, args.port), Handler) as httpd:
+
+class ThreadingTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
+    allow_reuse_address = True
+    daemon_threads = True
+
+
+with ThreadingTCPServer((args.host, args.port), Handler) as httpd:
     print(f"Serving {DIRECTORY} at http://{args.host}:{args.port}/")
     httpd.serve_forever()

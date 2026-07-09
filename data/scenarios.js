@@ -115,6 +115,159 @@ Use the same person from the reference image as the main subject, keeping their 
 They lift a golden championship trophy above their head with both hands, mouth open in triumphant celebration. Gold confetti and streamers fall everywhere, teammates celebrate behind them, and the full stadium erupts.
 
 Style: realistic celebration photography, golden confetti, dramatic floodlights, euphoric mood, no text on screen.`
+  },
+  {
+    id: "editorial-poster",
+    title: "Editorial Poster",
+    blurb: "Premium studio poster sitting on a geometric block.",
+    icon: "🖼️",
+    thumb: "assets/thumbs/editorial-poster.png",
+    tint: "#2c5282",
+    simplePrompt: "Somebody sitting on a geometric block in a clean studio football poster.",
+    namePlacement: "Put the requested name on the front of the jersey as bold custom lettering reading \"{{NAME}}\", positioned above the number {{NUMBER}}. Also echo \"{{NAME}}\" in clean minimal typography accents within the poster layout.",
+    template:
+`Create a hyper-realistic vertical 9:16 FIFA World Cup 2026 football poster inspired by premium sports editorial photography and minimalist World Cup branding.
+
+Use the same person from the reference image as the main player, keeping their face and features consistent. They are {{JERSEY}}, with the number {{NUMBER}} visible on the jersey.{{NAME_CLAUSE}}
+
+Center the composition on the player sitting confidently on a clean geometric block inside a studio-style environment. They face forward with elbows resting on knees and hands clasped naturally, giving a calm, focused, determined expression toward the camera. Use an official-inspired modern football kit with realistic fabric texture, matching socks and boots, and natural athletic body proportions with ultra-realistic skin texture.
+
+Adapt the entire design to {{COUNTRY}} colors, flag accents, and national football identity. Carry the national palette through jersey colors, sock stripes, typography accents, and subtle national design motifs. Place a large oversized transparent player number {{NUMBER}} vertically behind the player, with a matching number integrated beneath the seat/platform. Add minimal geometric graphic lines, thin UI-inspired football design elements, and small {{COUNTRY}} flag accents on the sides. Keep balanced negative space and an ultra-clean layout. Include a fictionalized World Cup 2026 badge-style mark in a corner without copying exact real logos.
+
+Lighting: soft cinematic studio light with gentle highlights and clean shadows. Style: premium sports editorial poster, hyper-realistic photography, minimalist branding, sharp detail, no exact real brand logos, no text on screen.`
+  },
+  {
+    id: "back-to-back-poster",
+    title: "Back-to-Back Poster",
+    blurb: "You and the player back-to-back over the country flag.",
+    icon: "🤝",
+    thumb: "assets/thumbs/back-to-back-poster.png",
+    tint: "#1a365d",
+    simplePrompt: "Use img1 as me and img2 as the player. Create a cinematic World Cup poster of us back-to-back over the country flag.",
+    requiresPlayerPhoto: true,
+    namePlacement: "If a custom name is shown, place \"{{NAME}}\" as small clean typography near the bottom edge or as subtle jersey lettering above the number {{NUMBER}}, without competing with the large country title.",
+    template:
+`Use img1 as my identity reference only. Use img2 as the football player identity reference only.
+
+Create a hyper-realistic vertical 9:16 cinematic World Cup 2026 promotional sports poster.
+
+Composition: waist-up framing of two people standing back-to-back in the center, arms crossed over their chests, looking straight at the camera with calm, serious, confident expressions. I am from img1 on the left. The football player from img2 is on the right. Both of us wear matching {{COUNTRY}} national-team kits — {{JERSEY}}, with the number {{NUMBER}} visible if the jersey fronts are in frame.{{NAME_CLAUSE}}
+
+Background: a large, stylized waving {{COUNTRY}} national flag filling the entire backdrop, dark and atmospheric with soft smoke or mist. Place a thin glowing neon vertical light streak down the exact center of the poster, picking up the main colors of the {{COUNTRY}} flag. Critical layering: the glowing center line must sit behind both players and in front of the flag — never over their faces, bodies, or jerseys. The players stay fully in the foreground; the line only peeks through the gap between them, with a bright white-hot glow / rim light where it passes between their heads and shoulders. Use dramatic dual-tone lighting that matches the flag's primary colors — cooler light on one side, warmer complementary light on the other.
+
+Typography and graphics:
+- Large country title at the bottom center reading "{{COUNTRY}}" in a bold uppercase sans-serif with a metallic silver 3D-beveled finish, subtle reflections, and strong presence.
+- Directly beneath it, smaller spaced-out white uppercase text reading "WORLD CUP 2026".
+- A clean fictionalized {{COUNTRY}} national-team crest / badge centered above the country title.
+- Tiny secondary labels: small thin white "{{COUNTRY}}" in a top corner, and a subtle "20 26" mark near the bottom edge.
+- Optional faint vertical small-caps text along one side for a premium editorial feel.
+
+Style: high-contrast cinematic sports poster, ultra-realistic faces and fabric, polished modern branding, balanced negative space. No exact real brand logos, no watermark, no extra text beyond the requested poster typography.`
+  },
+  {
+    id: "door-peek",
+    title: "Door Peek",
+    blurb: "Stylized 3D characters peeking from behind a door.",
+    icon: "🚪",
+    thumb: "assets/thumbs/door-peek.png",
+    tint: "#d69e2e",
+    simplePrompt: "Stylized 3D characters in matching soccer jerseys peeking from behind a door on a soft gradient background.",
+    requiresMultipleFaces: true,
+    namePlacement: "If a custom name is shown, place \"{{NAME}}\" as small clean jersey lettering on the top character's kit above the number {{NUMBER}}.",
+    template:
+`Use every attached reference photo as a separate face identity. Create one stylized 3D animated character for each attached face — people and pets both count. Match each character's face, hair, and features to its reference while translating them into a polished Pixar / Disney-style 3D look.
+
+Create a clean vertical 9:16 illustration of the characters stacked vertically and peeking out from behind a solid vertical door / wall edge on the left side of the frame. Their hands (or paws) grip the edge as they lean into view. Order them naturally from top to bottom based on how many faces were attached.
+
+Every character wears a matching {{COUNTRY}} national-team jersey — {{JERSEY}}, with the number {{NUMBER}} visible on the kits where it fits.{{NAME_CLAUSE}}
+
+Background: only a soft multi-color vertical gradient that matches the exact colors of the {{COUNTRY}} jersey they are wearing ({{JERSEY}}) — pull the gradient palette directly from that kit's primary and accent colors, the same way the original yellow-jersey version used warm gold / soft lavender / peach tones. Keep the flat light door/wall panel on the left. Soft studio lighting, expressive faces, detailed hair and fabric.
+
+Critical exclusions: do not include any phone screen UI — no clock, time, date, battery, signal bars, status bar, Instagram overlays, app chrome, watermarks, logos, or on-screen text. Output only the character art and gradient background.
+
+Style: high-quality 3D CG character render, soft lighting, playful World Cup fan energy, no photorealism, no text on screen.`
+  },
+  {
+    type: "section",
+    title: "Selfies",
+    note: "Might not work on GPT Image — try Grok or Nano Banana. Upload the player photo and your photo."
+  },
+  {
+    id: "pitch-invasion-selfie-photo",
+    title: "Pitch Selfie",
+    blurb: "Celebrating a goal with the captain as teammates rush in.",
+    icon: "📱",
+    thumb: "assets/thumbs/pitch-selfie.png",
+    tint: "#dd6b20",
+    simplePrompt: "Use img1 as me and img2 as the captain. Create a hyperrealistic World Cup goal celebration selfie from my own cell phone POV, with teammates running in.",
+    requiresPlayerPhoto: true,
+    namePlacement: "Do not put the requested name on the captain. Instead, place the requested name on my jersey as bold lettering reading \"{{NAME}}\" above the number {{NUMBER}}.",
+    template:
+`Use img1 as my identity reference only. Use img2 as the captain / star player identity reference only.
+
+Create a hyperrealistic vertical 9:16 smartphone selfie from the 2026 FIFA World Cup, captured from my own front-facing cell phone camera on the pitch. The image must feel like the exact photo I am taking myself, not a third-person photo of someone taking a picture.
+
+I am from img1, close to the camera in the foreground, holding the phone at arm's length for a selfie while celebrating a goal with the captain of the {{COUNTRY}} national team. I am wearing {{JERSEY}}, with the number {{NUMBER}} visible if the jersey is in frame.{{NAME_CLAUSE}} The phone itself should not be visible, but a partial extended arm or shoulder can appear at the edge of the frame to make it clear I am the one taking the picture.
+
+The captain from img2 is beside me, close enough to fit naturally in the selfie, also {{JERSEY}}, with a captain's armband and a clear number on the jersey. The captain has an arm around me or is locked in celebration, smiling or shouting with open-mouthed joy while looking toward my phone camera.
+
+Teammates in matching kits sprint toward us in the background to join the celebration. Thousands of fans are screaming behind us, stadium lights are bright, grass and confetti are visible around us, and the whole moment feels loud, emotional, and spontaneous.
+
+Use an authentic front-facing cell phone POV: close faces, wide-angle selfie lens distortion, slight camera tilt, imperfect framing, natural motion blur, realistic smartphone exposure, and documentary realism. Make it feel like a viral goal celebration selfie captured by the user seconds after scoring.
+
+No visible phone, no watermark, no logo, no text on screen.`
+  },
+  {
+    id: "tunnel-entrance-player-selfie",
+    title: "Tunnel Selfie",
+    blurb: "Quick selfie at the players' tunnel entrance.",
+    icon: "🚪",
+    thumb: "assets/thumbs/tunnel-selfie.png",
+    tint: "#319795",
+    simplePrompt: "Use img1 as the fan and img2 as the player. Create a spontaneous tunnel-entrance World Cup selfie.",
+    requiresPlayerPhoto: true,
+    namePlacement: "Do not put the requested name on the football player. Instead, place the requested name on the fan's jersey or lanyard, clearly reading \"{{NAME}}\" with the number {{NUMBER}}.",
+    template:
+`Use img1 as the fan identity reference only. Use img2 as the football player identity reference only.
+
+Create an ultra-realistic vertical 3:4 smartphone selfie taken right at the entrance of the players' tunnel inside a football stadium, just where players walk out from the tunnel onto the pitch. The setting is very important: this is not on the field and not in the stands. The photo must clearly feel like it was taken at the tunnel entrance area, with the tunnel opening, concrete stadium walls, railings, security staff, and the transition point between the corridor and the pitch visible in the background.
+
+The fan from img1 is in the foreground holding the phone for a selfie, smiling naturally with excitement and disbelief. The fan is {{JERSEY}}, with the number {{NUMBER}} visible if the jersey is in frame.{{NAME_CLAUSE}} The football player from img2 is standing close beside the fan, relaxed and friendly, looking toward the phone camera as if stopping briefly for a quick spontaneous photo on the way out.
+
+Both the fan and the player should appear to be wearing {{COUNTRY}} national-team-style jerseys. The player is also {{JERSEY}}, with the number {{NUMBER}} visible on the player's jersey, so the moment feels like a passionate fan taking a memorable tunnel-side selfie with the player. The image should feel authentic, informal, and slightly unexpected, like a real fan moment that happened near the restricted player access area.
+
+Include the tunnel entrance clearly behind them, with the dark corridor receding into the stadium interior, overhead lights, concrete walls, and a few staff or security personnel nearby. Add metal crowd barriers on one side with a few fans leaning in and watching. The player should look like he has just emerged from the tunnel or is about to head out toward the pitch.
+
+Use a front-facing smartphone camera perspective with vertical 3:4 framing, wide-angle selfie lens, slight arm extension visible if needed, natural handheld feel, realistic smartphone sharpness, natural skin texture, and real stadium lighting. The framing should be slightly imperfect and casual, like a genuine fan selfie.
+
+The final image should look spontaneous and believable, like a viral football selfie captured at the exact entrance of the tunnel where players come out. No cinematic effects, no AI-art styling, no beauty retouching, no watermark, no logo, and no text on screen.`
+  },
+  {
+    id: "security-holding-fan-selfie",
+    title: "Security Selfie",
+    blurb: "Front-camera selfie while security pulls the fan back.",
+    icon: "🛡️",
+    thumb: "assets/thumbs/security-selfie.png",
+    tint: "#e53e3e",
+    simplePrompt: "Use img1 as the fan and img2 as the player. Create a chaotic World Cup selfie while security holds the fan back.",
+    requiresPlayerPhoto: true,
+    namePlacement: "Do not put the requested name on the football player. Instead, place the requested name on the fan's jersey, clearly reading \"{{NAME}}\" with the number {{NUMBER}}.",
+    template:
+`Use img1 as the fan identity reference only. Use img2 as the football player identity reference only.
+
+Create an ultra-realistic vertical 3:4 smartphone selfie taken directly from the fan's own front-facing phone camera during a chaotic post-match pitch invasion at a major FIFA World Cup 2026 match.
+
+The fan from img1 is in the close foreground, excited, smiling, and slightly shocked, trying to capture a quick selfie with the football player from img2. The fan is {{JERSEY}}, with the number {{NUMBER}} visible if the jersey is in frame.{{NAME_CLAUSE}} The key detail is that security is actively holding the fan back while the photo is being taken. A security guard has one arm around the fan's chest or shoulder, pulling them away, but the fan is still leaning toward the player and trying to keep the selfie going.
+
+The football player from img2 is beside the fan, close enough to fit naturally in the selfie. The player is also {{JERSEY}}, with the number {{NUMBER}} visible on the player's jersey, smiling with a relaxed and amused expression, as if caught in the middle of the unexpected moment. He should look friendly but surprised, looking toward the phone camera while security tries to separate the fan.
+
+The scene should feel crowded and chaotic. Add security staff in black or orange vests around them, one person reaching in from the side, players and staff scattered across the pitch, photographers nearby, and a packed stadium in the background under bright floodlights.
+
+The photo must feel like a real fan selfie, not a professional sports photo. Use front-facing smartphone perspective, vertical 3:4 framing, wide-angle lens distortion, close faces, imperfect framing, slight camera shake, natural motion blur, realistic smartphone exposure, and authentic stadium lighting.
+
+The fan's arm may be partially visible to show they are holding the phone, but the phone itself should not be visible. Do not show an inset image, screenshot overlay, watermark, or logo, and no text on screen.
+
+Make the image feel spontaneous, funny, tense, and emotional, like a viral selfie captured seconds before security pulls the fan away. Use documentary realism, natural skin texture, realistic fabric, and real stadium atmosphere. No cinematic effects, no CGI, no AI-art look, no beauty retouching.`
   }
 ];
 

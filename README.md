@@ -4,6 +4,7 @@ A static web app that helps people build ready-to-paste AI prompts for placing t
 
 Users pick a scene, country jersey, shirt number, and optional name. The app generates a detailed prompt they can copy into ChatGPT or a video tool with their own selfie.
 
+-video tutorial: https://www.youtube.com/watch?v=FA_Uskon-z4
 - Repository: https://github.com/crownemmanuel/placemeintheworldcup
 - GitHub Pages URL: https://crownemmanuel.github.io/placemeintheworldcup/
 
